@@ -1,0 +1,30 @@
+version: 1
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+
+archives:
+  - format: tar.gz
+    format_overrides:
+    - goos: windows
+      format: zip
+
+brews:
+  - name: eclist
+    description: "List EC2 instances"
+    homepage: "https://github.com/jerilseb/eclist"
+    repository:
+      owner: jerilseb
+      name: homebrew-tap
+    commit_author:
+      name: goreleaserbot
+      email: bot@goreleaser.com
