@@ -72,7 +72,7 @@ func main() {
 			}
 
 			// Determine instance lifecycle
-			instanceLifecycle := "On-Demand"
+			instanceLifecycle := "on-demand"
 			if instance.InstanceLifecycle != types.InstanceLifecycleType("") {
 				instanceLifecycle = string(instance.InstanceLifecycle)
 			}
